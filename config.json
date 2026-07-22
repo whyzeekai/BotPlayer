@@ -1,0 +1,48 @@
+{
+  "log": {
+    "access": "/var/log/xray/access.log",
+    "error": "/var/log/xray/error.log",
+    "loglevel": "info"
+  },
+  "inbounds": [
+    {
+      "port": 443,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "289e1cdd-5780-40d9-9bfa-d95dcea0adc7",
+            "flow": "xtls-rprx-vision"
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "realitySettings": {
+          "show": false,
+          "dest": "celular.vk.com:443",
+          "xver": 0,
+          "serverNames": [
+            "celular.vk.com"
+          ],
+          "privateKey": "IJV4YZHH6bYzb26D3buNAiQhS0Yx6BULHByf7S1RgFA",
+          "shortIds": [
+            "ff112233"
+          ]
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "tag": "block"
+    }
+  ]
+}

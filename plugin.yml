@@ -1,0 +1,5 @@
+name: BotPlayer
+main: BotPlayer\BotPlayer
+version: 1.0
+api: 3.0.1
+author: fazer
